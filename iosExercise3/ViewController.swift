@@ -13,7 +13,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     
     var locations : [CLLocationCoordinate2D] = []
-    @IBOutlet weak var tableView: UITableView!
+      @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -23,15 +23,26 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         // Do any additional setup after loading the view.
         
         
+        let defaults = UserDefaults.standard
+        defaults.set(locations, forKey: "locationArray")
+        
+        
         
     }
     
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell1 = tableView.dequeueReusableCell(withIdentifier: "location", for: indexPath)
+
+        cell1.textLabel?.text = "wefuwe"
+        return cell1
     }
 
 
