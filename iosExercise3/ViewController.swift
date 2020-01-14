@@ -7,17 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
     
-
+    var locations : [CLLocationCoordinate2D] = []
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad()
     {
@@ -26,6 +21,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
+        
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
     }
 
 
